@@ -1,0 +1,82 @@
+
+            <form action="{% url 'product_list' %}" method="GET">
+                <!-- Category filter -->
+                <label for="category">Category:</label>
+                <select name="category" id="category">
+                    <option value="">All</option>
+                    {% for category in categories %}
+                    <option value="{{ category.id }}">{{ category.name }}</option>
+                    {% endfor %}
+                </select>
+
+                <!-- Brand filter -->
+                <label for="brand">Brand:</label>
+                <select name="brand" id="brand">
+                    <option value="">All</option>
+                    {% for brand in brands %}
+                    <option value="{{ brand.id }}">{{ brand.name }}</option>
+                    {% endfor %}
+                </select>
+
+                <!-- Warranty filter -->
+                <label for="warranty">Warranty:</label>
+                <select name="warranty" id="warranty">
+                    <option value="">All</option>
+                    {% for warranty in warranties %}
+                    <option value="{{ warranty.id }}">{{ warranty.name }}</option>
+                    {% endfor %}
+                </select>
+
+                <!-- Seller filter -->
+                <label for="seller">Seller:</label>
+                <select name="seller" id="seller">
+                    <option value="">All</option>
+                    {% for seller in sellers %}
+                    <option value="{{ seller.id }}">{{ seller.name }}</option>
+                    {% endfor %}
+                </select>
+
+                <button type="submit">Apply Filters</button>
+            </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <h1>Product Category Page</h1>
+
+                
+                {% for product in products %}
+                <div class="row">
+                    <div class="column">
+                        <img src="{{product.img.url}}" alt="Avatar" width="200" height="250">
+            </div>
+                        <div class="column">
+                          <h4><b>Name: {{ product.name }}</b></h4>
+                          <p>Price: {{ product.price }}</p>
+                          <p>Category: {{ product.category }}</p>
+                          <p>Warranty: {{ product.warranty }}</p>
+                          <p> Brand: {{ product.brand }}</p>
+                          <p>Seller:  {{ product.seller }}</p>
+                        <!-- </div> -->
+                      </div>
+                {% endfor %}
+              </div>
+
+              
+                
+                  
+      <!-- </div> -->

@@ -1,0 +1,170 @@
+/* The sidebar menu */
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Style page content */
+  .main {
+    margin-left: 160px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  
+
+  .glyphicon { margin-right:5px; }
+body{
+  background:#fff;
+  font-family: Open Sans;
+}
+.category{
+  position:relative;
+  top:-5px;
+  left:10px;
+  color:#20e3b2;
+  font-weight:200;
+  margin-bottom:-20px;
+}
+.well{  
+  background:transparent;
+  border-style:none;
+}
+.btn{
+  border-style:none;
+  
+}
+.col-md-3:hover{
+  box-shadow: 1px 5px 25px #ccc;
+
+}
+.thumbnail
+{
+    margin-bottom: 0px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    
+}
+.inner{
+  margin-left:0px;
+}
+.item{
+width:250px;
+padding:0;
+margin-top:5px;
+margin:15px;
+box-shadow: 1px 5px 15px #CCC;
+}
+
+.item.list-group-item
+{
+    float: none;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 10px; 
+}
+.item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover
+{ 
+    box-shadow: 0px 1px 25px #ccc;
+}
+
+.item.list-group-item .list-group-image
+{
+    margin-right:5px;
+    
+}
+.item.list-group-item .thumbnail
+{   
+    margin-bottom: 0px;
+  
+}
+.item.list-group-item .caption
+{
+    padding: 9px 9px 0px 9px; 
+
+}
+
+
+.item.list-group-item:before, .item.list-group-item:after
+{
+    display: table;
+    content: " ";
+}
+
+.item.list-group-item img
+{
+   float: left;
+}
+.item.list-group-item:after
+{
+    clear: both;
+}
+.btn-success,.btn-details{
+  margin-top:40px;
+}
+.btn-details{
+  background:transparent;
+  border-style:solid;
+  border-color:lightgrey;
+  border-radius:0%;
+  width:125px;
+  top:11px;
+  left:5px;
+  color:black;
+}
+.btn-details:hover{
+  background:lightgrey;
+  color:white;
+}
+.lead{
+  position:absolute;
+  font-weight:700;
+  font-size:18px;
+}
+
+.btn-success{
+  overflow:hidden;
+  border-radius:0%;
+  border-style:none;
+  width:125px;
+  left:5px;
+  top:11px;
+  height:33px;
+  background: linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6);
+}
+
+@keyframes scalewidth {
+  0% {
+width: 0%;
+}
+  100%{
+width : 100%;
+}
+}

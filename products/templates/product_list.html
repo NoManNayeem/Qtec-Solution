@@ -1,0 +1,97 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Products</title>
+    <link rel="stylesheet" href="{% static 'product_list.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  </head>
+<body>
+        <!-- Side navigation -->
+<div class="sidenav">
+    
+    <form style="color:aliceblue" action="{% url 'product_list' %}" method="GET">
+        <!-- Category filter -->
+        <label for="category">Category:</label>
+        <select name="category" id="category">
+            <option value="">All</option>
+            {% for category in categories %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+
+        <!-- Brand filter -->
+        <label for="brand">Brand:</label>
+        <select name="brand" id="brand">
+            <option value="">All</option>
+            {% for brand in brands %}
+            <option value="{{ brand.id }}">{{ brand.name }}</option>
+            {% endfor %}
+        </select>
+
+        <!-- Warranty filter -->
+        <label for="warranty">Warranty:</label>
+        <select name="warranty" id="warranty">
+            <option value="">All</option>
+            {% for warranty in warranties %}
+            <option value="{{ warranty.id }}">{{ warranty.name }}</option>
+            {% endfor %}
+        </select>
+
+        <!-- Seller filter -->
+        <label for="seller">Seller:</label>
+        <select name="seller" id="seller">
+            <option value="">All</option>
+            {% for seller in sellers %}
+            <option value="{{ seller.id }}">{{ seller.name }}</option>
+            {% endfor %}
+        </select>
+
+        <button  type="submit">Apply Filters</button>
+    </form>
+  </div>
+
+
+<!-- Page content -->
+
+<div class="main">
+    <div class="container">
+        {% for product in products %}
+        <div id="products" class="row list-group">
+            <div class="item  col-xs-4 col-md-3">
+                <div class="thumbnail">
+                    <img class="group list-group-image" src="{{product.img.url}}" alt="product" width = '200px' height="250px" />
+                  <div class="category">
+                    <h5 class="category-name">{{ product.category }}</h5>
+                  </div>
+                    <div class="caption">
+                        <h4 class="group inner list-group-item-heading">
+                            {{ product.name }}</h4>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <p class="lead">
+                                    {{ product.price }}</p>
+                            </div>
+    <div class="">
+        
+        <p>Category: {{ product.category }}</p>
+        <p>Warranty: {{ product.warranty }}</p>
+        <p> Brand: {{ product.brand }}</p>
+        <p>Seller:  {{ product.seller }}</p>
+      </div>
+                     </div>
+                  </div>
+                  </div>
+                </div>
+    
+        </div>
+        {% endfor %}
+    </div>
+    
+    
+    
+</div>
+</body>
+</html>
